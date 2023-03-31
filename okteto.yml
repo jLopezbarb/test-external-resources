@@ -4,7 +4,7 @@ build:
     context: .
 
 deploy:
-  image: okteto/pipeline-runner:1.0.0
+  image: okteto/pipseline-runner:1.0.0
   commands:
     - name: "Deploy app"
       command: kubectl apply -f k8s.yml
@@ -12,7 +12,7 @@ deploy:
       command: echo "Doing something fancy"
       
 destroy:
-  image: okteto/pipeline-runner:1.0.0
+  image: okteto/pipesline-runner:1.0.0
   commands:
     - name: "Destroy something"
       command: echo "Destroying something important..."
