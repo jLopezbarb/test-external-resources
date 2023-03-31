@@ -6,7 +6,20 @@ build:
     context: .
 
 deploy:
-  - kubectl apply -f k8s.yml
+  image: okteto/pipeline-runner:1.0.0
+  commands:
+    - name: "Deploy app"
+      command: kubectl apply -f k8s.yml
+    - name: "Script"
+      command: echo "Doing something fancy"
+      
+destroy:
+  image: okteto/pipeline-runner:1.0.0
+  commands:
+    - name: "Destroy something"
+      command: echo "Destroying something important..."
+    - name: "Destroy other thing"
+      command: echo "Destroying something else...."
 
 
 external:
